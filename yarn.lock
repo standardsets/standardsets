@@ -1045,7 +1045,7 @@
     tmp "~0.2.1"
     tslib "^2.3.0"
 
-"@nrwl/js@15.8.6":
+"@nrwl/js@15.8.6", "@nrwl/js@^15.8.6":
   version "15.8.6"
   resolved "https://registry.yarnpkg.com/@nrwl/js/-/js-15.8.6.tgz#6a2310b9c5a42449db3768b69acffd6ff7be6a88"
   integrity sha512-nFLsmmvmuSdoFJoP0u8zObgNcW9abbZJn3LIciHLh8hQhhbUdAiVvFzhwqIrBhMtT/dK9y4XE9QXSvwbzRR/rg==
