@@ -12,5 +12,17 @@
   "npmScope": "standardsets",
   "affected": {
     "defaultBase": "main"
+  },
+  "targetDefaults": {
+    "lint": {
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json",
+        "{workspaceRoot}/.eslintignore"
+      ]
+    },
+    "test": {
+      "inputs": ["default", "^default"]
+    }
   }
 }

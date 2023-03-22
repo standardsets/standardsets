@@ -1,0 +1,45 @@
+{
+  "name": "us-states",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/us-states/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/us-states",
+        "main": "packages/us-states/src/index.ts",
+        "tsConfig": "packages/us-states/tsconfig.lib.json",
+        "assets": [],
+        "format": ["cjs", "esm"],
+        "project": "packages/us-states/package.json",
+        "rollupConfig": ["tools/scripts/rollupConfig.js"],
+        "compiler": "swc"
+      }
+    },
+    "publish": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node tools/scripts/publish.mjs us-states {args.ver} {args.tag}"
+      },
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/us-states/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/vite:test",
+      "outputs": ["{workspaceRoot}/coverage/packages/us-states"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/packages/us-states"
+      }
+    }
+  },
+  "tags": []
+}

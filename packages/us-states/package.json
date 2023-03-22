@@ -1,0 +1,16 @@
+{
+  "name": "@standardsets/us-states",
+  "version": "0.0.1",
+  "description": "Utilities for for getting list of U.S. States, and their equivalent variations/abbreviations.",
+  "type": "commonjs",
+  "author": "Ryan Hefner <hi@ryanhefner.com> (https://www.ryanhefner.com)",
+  "license": "gpl-3.0",
+  "repository": {
+    "type": "git",
+    "url": "standardsets/standardsets"
+  },
+  "bugs": {
+    "url": "https://github.com/standardsets/standardsets/issues"
+  },
+  "homepage": "https://github.com/standardsets/standardsets#readme"
+}
