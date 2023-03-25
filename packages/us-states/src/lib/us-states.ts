@@ -1,29 +1,36 @@
 import type { Variation } from './types'
 
-export const usStatesSet = {
+export enum VariationKey {
+  FULL_NAME = 'fullName',
+  POSTAL_CODE = 'postalCode',
+  ABBREVIATION_AP_STYLE = 'abbrAPStyle',
+  ABBREVIATION_GPO_STYLE = 'abbrGPOStyle',
+}
+
+export const dataset = {
   name: 'U.S. States',
   variations: [
     {
       name: 'Full Name',
-      key: 'fullName',
+      key: VariationKey.FULL_NAME,
       locale: 'en-US',
       index: 0,
     },
     {
       name: 'Postal Code',
-      key: 'postalCode',
+      key: VariationKey.POSTAL_CODE,
       locale: 'en-US',
       index: 1,
     },
     {
       name: 'Abbreviation - AP Style',
-      key: 'abbreviationAPStyle',
+      key: VariationKey.ABBREVIATION_AP_STYLE,
       locale: 'en-US',
       index: 2,
     },
     {
       name: 'Abbreviation - GPO Style',
-      key: 'abbreviationGPOStyle',
+      key: VariationKey.ABBREVIATION_GPO_STYLE,
       locale: 'en-US',
       index: 3,
     },
@@ -88,7 +95,7 @@ export const usStatesSet = {
  * @returns {Variation[]} - Array of set variations
  */
 export const getVariations = (): Variation[] => {
-  return usStatesSet.variations;
+  return dataset.variations;
 };
 
 /**
@@ -97,11 +104,11 @@ export const getVariations = (): Variation[] => {
  * @param variationKey
  * @returns {string[]} - Array of items for the given variation key
  */
-export const getVariationItems = (variationKey: string): string[] => {
-  const variationIndex = usStatesSet.variations.findIndex(
+export const getVariationItems = (variationKey: string = VariationKey.FULL_NAME): string[] => {
+  const variationIndex = dataset.variations.findIndex(
     (variation) => variation.key === variationKey
   );
-  return usStatesSet.data.map((state) => state[variationIndex]);
+  return dataset.data.map((state) => state[variationIndex]);
 };
 
 /**
@@ -111,22 +118,31 @@ export const getVariationItems = (variationKey: string): string[] => {
  * @param variationKey
  * @returns {string} - The alternate for the given state and variation key
  */
-export const getAlternate = (state: string, variationKey: string): string => {
-  const stateIndex = usStatesSet.data.findIndex((stateVariations) =>
+export const getAlternate = (state: string, variationKey: VariationKey | string): string | null => {
+  if (!state) {
+    console.warn('State is required');
+    return null;
+  }
+
+  const stateIndex = dataset.data.findIndex((stateVariations) =>
     stateVariations.includes(state)
   );
 
   if (stateIndex === -1) {
-    throw new Error(`State not found: ${state}`);
+    // throw new Error(`State not found: ${state}`);
+    console.warn('State not found: ', state);
+    return null;
   }
 
-  const variationIndex = usStatesSet.variations.findIndex(
+  const variationIndex = dataset.variations.findIndex(
     (variation) => variation.key === variationKey
   );
 
   if (variationIndex === -1) {
-    throw new Error(`Variation not found: ${variationKey}`);
+    // throw new Error(`Variation not found: ${variationKey}`);
+    console.warn('Variation not found: ', variationKey);
+    return null;
   }
 
-  return usStatesSet.data[stateIndex][variationIndex];
+  return dataset.data[stateIndex][variationIndex];
 };
