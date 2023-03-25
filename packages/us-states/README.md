@@ -1,11 +1,39 @@
 # @standardsets/us-states
 
-## This Repo
+Utilities for querying U.S. States data, and their equivalent variations/abbreviations.
 
-### Building
+## Install
 
-Run `nx build us-states` to build the library.
+Via [npm](https://npmjs.com/package/@standardsets/us-states)
 
-### Running unit tests
+```sh
+npm install -S @standardsets/us-states
+```
 
-Run `nx test us-states` to execute the unit tests via [Jest](https://jestjs.io).
+Via [Yarn](https://yarn.pm/@standardsets/us-states)
+
+```sh
+yarn add @standardsets/us-states
+```
+
+## Dataset Options
+
+### Variations
+
+|
+
+## How to use
+
+```js
+
+```
+
+### Methods
+
+* `getVariations` -
+* `getVariationItems` -
+* `getAlternate` -
+
+## License
+
+[GPL-3.0](../../LICENSE) © [Standard Sets](https://standardsets.com)
