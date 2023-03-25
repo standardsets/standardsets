@@ -1,8 +1,7 @@
 {
   "name": "@standardsets/us-states",
   "version": "0.0.1",
-  "description": "Utilities for for getting list of U.S. States, and their equivalent variations/abbreviations.",
-  "type": "commonjs",
+  "description": "Utilities for querying U.S. States data, and their equivalent variations/abbreviations.",
   "author": "Ryan Hefner <hi@ryanhefner.com> (https://www.ryanhefner.com)",
   "license": "gpl-3.0",
   "repository": {
