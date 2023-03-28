@@ -18,7 +18,7 @@ Because it’s good to have, Standard Sets.
 
 ## Packages
 
-* [`us-states`](packages/us-states) - Utilities for querying U.S. States names, and their equivalent variations/abbreviations.
+* [`@standardsets/us-states`](packages/us-states) - Utilities for querying U.S. States names, and their equivalent variations/abbreviations.
 
 ## License
 
