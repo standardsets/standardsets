@@ -4,7 +4,7 @@
   "sourceRoot": "packages/us-states/src",
   "projectType": "library",
   "targets": {
-    "build": {
+    "build-internal": {
       "executor": "@nrwl/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
@@ -15,7 +15,16 @@
         "format": ["cjs", "esm"],
         "project": "packages/us-states/package.json",
         "rollupConfig": ["tools/scripts/rollupConfig.js"],
-        "compiler": "swc"
+        "compiler": "swc",
+        "javascriptEnabled": true,
+        "generateExportsField": true,
+        "skipTypeField": false
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn nx run us-states:build-internal && yarn tsc -p ./packages/us-states/tsconfig.declarations.json"
       }
     },
     "publish": {
