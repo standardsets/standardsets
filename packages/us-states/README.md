@@ -5,7 +5,6 @@
   </a>
   <h3>Because it’s good to have, Standard Sets.</h3>
   <br />
-  <br />
   <h3><code>@standardsets/us-states</code></h3>
   <h3>U.S. State Names and Abbreviations</h3>
   <br />
