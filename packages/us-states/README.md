@@ -55,7 +55,7 @@ or `postalCode` &rarr; `fullName`)
 
 import { getAlternate, VariationKey } from '@standardsets/us-states'
 
-const postalCode = getAlternat('Ohio', VariationKey.POSTAL_CODE)
+const postalCode = getAlternate('Ohio', VariationKey.POSTAL_CODE)
 console.debug(postalCode) // Outputs: 'OH'
 
 ```
@@ -64,7 +64,7 @@ console.debug(postalCode) // Outputs: 'OH'
 
 * `getVariations` - Listing of available variations for the current data set.
 * `getVariationItems` - Query dataset and return the specified variation items. Default to `fullName`
-* `getAlternate` - Allows for swapping one variation for another. (ex. `fullName` &rarr; `postalCode` | `Ohio` &rarr; `OH`)
+* `getItemVariation` - Allows for swapping one variation for another. (ex. `fullName` &rarr; `postalCode` | `Ohio` &rarr; `OH`)
 
 ## License
 

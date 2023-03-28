@@ -104,7 +104,7 @@ export const getVariations = (): Variation[] => {
  * @param variationKey
  * @returns {string[]} - Array of items for the given variation key
  */
-export const getVariationItems = (variationKey: VariationKey = VariationKey.FULL_NAME): string[] => {
+export const getVariationItems = (variationKey: VariationKey | string = VariationKey.FULL_NAME): string[] => {
   const variationIndex = dataset.variations.findIndex(
     (variation) => variation.key === variationKey
   );
@@ -112,13 +112,13 @@ export const getVariationItems = (variationKey: VariationKey = VariationKey.FULL
 };
 
 /**
- * Returns the alternate for the given state and variation key.
+ * Returns the item variation for the given state and variation key.
  *
  * @param state
  * @param variationKey
  * @returns {string} - The alternate for the given state and variation key
  */
-export const getAlternate = (state: string, variationKey: VariationKey | string): string | null => {
+export const getItemVariation = (state: string, variationKey: VariationKey | string): string | null => {
   if (!state) {
     console.warn('State is required');
     return null;
@@ -129,7 +129,6 @@ export const getAlternate = (state: string, variationKey: VariationKey | string)
   );
 
   if (stateIndex === -1) {
-    // throw new Error(`State not found: ${state}`);
     console.warn('State not found: ', state);
     return null;
   }
@@ -139,7 +138,6 @@ export const getAlternate = (state: string, variationKey: VariationKey | string)
   );
 
   if (variationIndex === -1) {
-    // throw new Error(`Variation not found: ${variationKey}`);
     console.warn('Variation not found: ', variationKey);
     return null;
   }
