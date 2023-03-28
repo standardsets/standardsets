@@ -11,7 +11,7 @@ describe('us-states', () => {
   })
 
   it('should return all items for a given variation key', () => {
-    const items = getVariationItems('fullName');
+    const items = getVariationItems(VariationKey.FULL_NAME);
     expect(items.length).toEqual(50);
     expect(items[0]).toEqual('Alabama');
     expect(items[1]).toEqual('Alaska');
