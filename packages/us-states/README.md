@@ -41,8 +41,8 @@ yarn add @standardsets/us-states
 
 Passing the appropriate `variation.key` (enumerator `VariationKey`) is how either
 lists of U.S. State names are returned in the requested variation, or allow for
-one variation to be returned in another format (ex. `fullName` -> `postalCode`
-or `postalCode` -> `fullName`)
+one variation to be returned in another format (ex. `fullName` &rarr; `postalCode`
+or `postalCode` &rarr; `fullName`)
 
 * `fullName` | `VariationKey.FULL_NAME` (default) - Full U.S. name, capitalized.
 * `postalCode` | `VariationKey.POSTAL_CODE` - 2-letter codes by the United States Postal Service
