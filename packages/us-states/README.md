@@ -30,10 +30,10 @@ lists of U.S. State names are returned in the requested variation, or allow for
 one variation to be returned in another format (ex. `fullName` -> `postalCode`
 or `postalCode` -> `fullName`)
 
-* `fullName` (default) - Full U.S. name, capitalized.
-* `postalCode` - 2-letter codes by the United States Postal Service
-* `abbrAPStyle` - Name abbreviations from the AP Stylebook
-* `abbrGPOStyle` - Official US Government Printing Office abbreviations
+* `fullName` | `VariationKey.FULL_NAME` (default) - Full U.S. name, capitalized.
+* `postalCode` | `VariationKey.POSTAL_CODE` - 2-letter codes by the United States Postal Service
+* `apStyle` | `VariationKey.AP_STYLE` - Name abbreviations from the AP Stylebook
+* `gpoStyle` | `VairationKey.GPO_STYLE` - Official US Government Printing Office abbreviations
 
 ## How to use
 
