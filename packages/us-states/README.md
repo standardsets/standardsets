@@ -3,7 +3,7 @@
 [![npm - Version](https://img.shields.io/npm/v/@standardsets/us-states?style=flat-square)](https://www.pkgstats.com/pkg:@standardsets/us-states?ref=github.com)
 [![npm - License](https://img.shields.io/npm/l/@standardsets/us-states?style=flat-square)](../../LICENSE)
 [![npm - Downloads](https://img.shields.io/npm/dt/@standardsets/us-states?style=flat-square)](https://www.pkgstats.com/pkg:@standardsets/us-states?ref=github.com)
-[![Follow @StandardSets on Twitter](https://img.shields.io/twitter/follow/inngest?style=social)](https://twitter.com/standardsets)
+[![Follow @StandardSets on Twitter](https://img.shields.io/twitter/follow/standardsets?style=social)](https://twitter.com/standardsets)
 
 Utilities for querying U.S. States names, and their equivalent variations/abbreviations.
 
