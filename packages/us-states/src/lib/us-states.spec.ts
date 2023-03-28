@@ -1,4 +1,4 @@
-import { getVariations, getVariationItems, getAlternate, VariationKey } from './us-states';
+import { getVariations, getVariationItems, getItemVariation, VariationKey } from './us-states';
 
 describe('us-states', () => {
   it('should return all variations', () => {
@@ -6,8 +6,8 @@ describe('us-states', () => {
     expect(variations.length).toEqual(4);
     expect(variations[0].key).toEqual('fullName');
     expect(variations[1].key).toEqual('postalCode');
-    expect(variations[2].key).toEqual('abbrAPStyle');
-    expect(variations[3].key).toEqual('abbrGPOStyle');
+    expect(variations[2].key).toEqual('apStyle');
+    expect(variations[3].key).toEqual('gpoStyle');
   })
 
   it('should return all items for a given variation key', () => {
@@ -66,7 +66,17 @@ describe('us-states', () => {
   })
 
   it('should return the alternate value for a given variation key', () => {
-    const alternate = getAlternate('Ohio', VariationKey.POSTAL_CODE);
+    const alternate = getItemVariation('Ohio', VariationKey.POSTAL_CODE);
+    expect(alternate).toEqual('OH');
+  })
+
+  it('should return the alternate value for a given variation key, with lowercase value', () => {
+    const alternate = getItemVariation('ohio', VariationKey.POSTAL_CODE);
+    expect(alternate).toEqual('OH');
+  })
+
+  it('should return the alternate value for a given variation key, with all caps value', () => {
+    const alternate = getItemVariation('OHIO', VariationKey.POSTAL_CODE);
     expect(alternate).toEqual('OH');
   })
 })
