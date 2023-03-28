@@ -1,7 +1,7 @@
 <div align="center">
   <br />
   <a href="https://standardsets.com">
-    <img src="../../assets/standardsets-logo.png" width="150" />
+    <img src="https://raw.githubusercontent.com/standardsets/standardsets/v/0.1.0/assets/standardsets-logo.png" width="150" />
   </a>
   <h3>Because it’s good to have, Standard Sets.</h3>
   <br />
