@@ -4,11 +4,11 @@
     <img src="../../assets/standardsets-logo.png" width="150" />
   </a><br />
   <br />
-  <h1><code>@standardsets/us-states</code></h1>
-  <h2>Because it’s good to have, Standard Sets.</h2>
+  <h2 style="border-bottom: 0;margin-top: 0;padding-bottom: 0;">Because it’s good to have, Standard Sets.</h2>
   <br />
   <br />
-  <h3>U.S. States Name and Abbreviations</h3>
+  <h1 style="border-bottom: 0;padding-bottom: 0;"><code>@standardsets/us-states</code></h1>
+  <h3>U.S. State Names and Abbreviations</h3>
   <br />
   <br />
   <p>
