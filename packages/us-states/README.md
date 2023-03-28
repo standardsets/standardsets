@@ -1,5 +1,10 @@
 # @standardsets/us-states
 
+[![npm - Version](https://img.shields.io/npm/v/@standardsets/us-states?style=flat-square)](https://www.pkgstats.com/pkg:@standardsets/us-states?ref=github.com)
+[![npm - License](https://img.shields.io/npm/l/@standardsets/us-states?style=flat-square)](../../LICENSE)
+[![npm - Downloads](https://img.shields.io/npm/dt/@standardsets/us-states?style=flat-square)](https://www.pkgstats.com/pkg:@standardsets/us-states?ref=github.com)
+[![Follow @StandardSets on Twitter](https://img.shields.io/twitter/follow/inngest?style=social)](https://twitter.com/standardsets)
+
 Utilities for querying U.S. States names, and their equivalent variations/abbreviations.
 
 ## Install
@@ -20,9 +25,10 @@ yarn add @standardsets/us-states
 
 ### Variations
 
-Passing the appropriate `variation.key` is how either lists of U.S. State names
-are returned in the requested variation, or allow for one variation to be returned
-in another format (ex. `fullName` -> `postalCode` or `postalCode` -> `fullName`)
+Passing the appropriate `variation.key` (enumerator `VariationKey`) is how either
+lists of U.S. State names are returned in the requested variation, or allow for
+one variation to be returned in another format (ex. `fullName` -> `postalCode`
+or `postalCode` -> `fullName`)
 
 * `fullName` (default) - Full U.S. name, capitalized.
 * `postalCode` - 2-letter codes by the United States Postal Service
@@ -33,9 +39,9 @@ in another format (ex. `fullName` -> `postalCode` or `postalCode` -> `fullName`)
 
 ```js
 
-import { getAlternate, Variation } from '@standardsets/us-states'
+import { getAlternate, VariationKey } from '@standardsets/us-states'
 
-const postalCode = getAlternat('Ohio', Variation.POSTAL_CODE)
+const postalCode = getAlternat('Ohio', VariationKey.POSTAL_CODE)
 console.debug(postalCode) // Outputs: 'OH'
 
 ```
