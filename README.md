@@ -3,7 +3,6 @@
   <a href="https://standardsets.com">
     <img src="./assets/standardsets-logo.png" width="150" />
   </a>
-  <h3>Standard Sets</h3>
   <h3>Because it’s good to have, Standard Sets.</h3>
   <br />
   <p>
