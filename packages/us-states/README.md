@@ -1,9 +1,25 @@
-# @standardsets/us-states
+<div align="center">
+  <br />
+  <a href="https://standardsets.com">
+    <img src="../../assets/standardsets-logo.png" width="150" />
+  </a><br />
+  <br />
+  <h1><code>@standardsets/us-states</code></h1>
+  <h2>Because it’s good to have, Standard Sets.</h2>
+  <br />
+  <br />
+  <h3>U.S. States Name and Abbreviations</h3>
+  <br />
+  <br />
+  <p>
+    <a href="https://www.pkgstats.com/pkg:@standardsets/us-states?ref=github.com" title="NPM - Version"><img src="https://img.shields.io/npm/v/@standardsets/us-states?style=flat-square" /></a>
+    <a href="../../LICENSE" title="License"><img src="https://img.shields.io/npm/l/@standardsets/us-states?style=flat-square" /></a>
+    <a href="https://www.pkgstats.com/pkg:@standardsets/us-states?ref=github.com" title="NPM - Downloads"><img src="https://img.shields.io/npm/dt/@standardsets/us-states?style=flat-square" /></a>
+    <a href="https://twitter.com/standardsets" title="Follow @StandardSets on Twitter"><img src="https://img.shields.io/twitter/follow/standardsets?style=social" /></a>
+  </p>
+</div>
 
-[![npm - Version](https://img.shields.io/npm/v/@standardsets/us-states?style=flat-square)](https://www.pkgstats.com/pkg:@standardsets/us-states?ref=github.com)
-[![npm - License](https://img.shields.io/npm/l/@standardsets/us-states?style=flat-square)](../../LICENSE)
-[![npm - Downloads](https://img.shields.io/npm/dt/@standardsets/us-states?style=flat-square)](https://www.pkgstats.com/pkg:@standardsets/us-states?ref=github.com)
-[![Follow @StandardSets on Twitter](https://img.shields.io/twitter/follow/standardsets?style=social)](https://twitter.com/standardsets)
+<hr />
 
 Utilities for querying U.S. States names, and their equivalent variations/abbreviations.
 
