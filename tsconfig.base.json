@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@standardsets/us-states": ["src/index.ts"]
+      "@standardsets/us-states": ["packages/us-states/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
