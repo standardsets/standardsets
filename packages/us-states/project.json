@@ -23,14 +23,16 @@
     },
     "build": {
       "executor": "nx:run-commands",
+      "outputs": ["{options.outputPath}"],
       "options": {
-        "command": "yarn nx run us-states:build-internal && yarn tsc -p ./packages/us-states/tsconfig.declarations.json"
+        "outputPath": "dist/packages/us-states",
+        "command": "yarn nx run us-states:build-internal && yarn tsc -p ./packages/us-states/tsconfig.declarations.json && cp ./packages/us-states/README.md ./dist/packages/us-states/README.md"
       }
     },
     "publish": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "node tools/scripts/publish.mjs us-states {args.ver} {args.tag}"
+        "command": "node tools/scripts/publish.mjs us-states {args.version} {args.tag} {args.otp}"
       },
       "dependsOn": ["build"]
     },
