@@ -2,12 +2,11 @@
   <br />
   <a href="https://standardsets.com">
     <img src="../../assets/standardsets-logo.png" width="150" />
-  </a><br />
+  </a>
+  <h3>Because it’s good to have, Standard Sets.</h3>
   <br />
-  <h2 style="border-bottom: 0;margin-top: 0;padding-bottom: 0;">Because it’s good to have, Standard Sets.</h2>
   <br />
-  <br />
-  <h1 style="border-bottom: 0;padding-bottom: 0;"><code>@standardsets/us-states</code></h1>
+  <h3><code>@standardsets/us-states</code></h3>
   <h3>U.S. State Names and Abbreviations</h3>
   <br />
   <br />
