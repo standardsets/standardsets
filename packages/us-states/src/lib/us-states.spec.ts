@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { getVariations, getVariationItems, getItemVariation, VariationKey } from './us-states';
 
 describe('us-states', () => {
