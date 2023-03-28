@@ -10,6 +10,7 @@
   "devDependencies": {
     "@babel/core": "^7.21.0",
     "@nrwl/cli": "^15.8.9",
+    "@nrwl/devkit": "^15.8.9",
     "@nrwl/eslint-plugin-nx": "^15.8.9",
     "@nrwl/js": "^15.8.6",
     "@nrwl/linter": "^15.8.9",
