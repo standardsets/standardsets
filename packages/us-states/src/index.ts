@@ -1,1 +1,1 @@
-export * from './lib/us-states';
+export * from './lib/us-states'

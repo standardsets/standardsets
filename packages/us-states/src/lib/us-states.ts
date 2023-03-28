@@ -87,7 +87,7 @@ export const dataset = {
     ['Wisconsin', 'WI', 'Wis.', 'Wis.'],
     ['Wyoming', 'WY', 'Wyo.', 'Wyo.'],
   ],
-};
+}
 
 /**
  * Returns available variations for this set.
@@ -95,8 +95,8 @@ export const dataset = {
  * @returns {Variation[]} - Array of set variations
  */
 export const getVariations = (): Variation[] => {
-  return dataset.variations;
-};
+  return dataset.variations
+}
 
 /**
  * Returns all items for the provided variation key.
@@ -104,12 +104,14 @@ export const getVariations = (): Variation[] => {
  * @param variationKey
  * @returns {string[]} - Array of items for the given variation key
  */
-export const getVariationItems = (variationKey: VariationKey | string = VariationKey.FULL_NAME): string[] => {
+export const getVariationItems = (
+  variationKey: VariationKey | string = VariationKey.FULL_NAME
+): string[] => {
   const variationIndex = dataset.variations.findIndex(
     (variation) => variation.key === variationKey
-  );
-  return dataset.data.map((state) => state[variationIndex]);
-};
+  )
+  return dataset.data.map((state) => state[variationIndex])
+}
 
 /**
  * Returns the item variation for the given state and variation key.
@@ -118,29 +120,34 @@ export const getVariationItems = (variationKey: VariationKey | string = Variatio
  * @param variationKey
  * @returns {string} - The alternate for the given state and variation key
  */
-export const getItemVariation = (state: string, variationKey: VariationKey | string): string | null => {
+export const getItemVariation = (
+  state: string,
+  variationKey: VariationKey | string
+): string | null => {
   if (!state) {
-    console.warn('State is required');
-    return null;
+    console.warn('State is required')
+    return null
   }
 
   const stateIndex = dataset.data.findIndex((stateVariations) =>
-    stateVariations.map((variation) => variation.toLowerCase()).includes(state.toLowerCase())
-  );
+    stateVariations
+      .map((variation) => variation.toLowerCase())
+      .includes(state.toLowerCase())
+  )
 
   if (stateIndex === -1) {
-    console.warn('State not found: ', state);
-    return null;
+    console.warn('State not found: ', state)
+    return null
   }
 
   const variationIndex = dataset.variations.findIndex(
     (variation) => variation.key === variationKey
-  );
+  )
 
   if (variationIndex === -1) {
-    console.warn('Variation not found: ', variationKey);
-    return null;
+    console.warn('Variation not found: ', variationKey)
+    return null
   }
 
-  return dataset.data[stateIndex][variationIndex];
-};
+  return dataset.data[stateIndex][variationIndex]
+}
