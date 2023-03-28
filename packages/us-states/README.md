@@ -64,7 +64,7 @@ console.debug(postalCode) // Outputs: 'OH'
 
 * `getVariations` - Listing of available variations for the current data set.
 * `getVariationItems` - Query dataset and return the specified variation items. Default to `fullName`
-* `getAlternate` - Allows for swapping one variation for another. (ex. `fullName` -> `postalCode` | `Ohio` -> `OH`)
+* `getAlternate` - Allows for swapping one variation for another. (ex. `fullName` &rarr; `postalCode` | `Ohio` &rarr; `OH`)
 
 ## License
 
