@@ -17,7 +17,7 @@ export const dataset = {
       index: 0,
     },
     {
-      name: 'Postal Code',
+      name: 'Two-letter codes - USPS',
       key: VariationKey.POSTAL_CODE,
       locale: 'en-US',
       index: 1,
@@ -104,7 +104,7 @@ export const getVariations = (): Variation[] => {
  * @param variationKey
  * @returns {string[]} - Array of items for the given variation key
  */
-export const getVariationItems = (variationKey: string = VariationKey.FULL_NAME): string[] => {
+export const getVariationItems = (variationKey: VariationKey = VariationKey.FULL_NAME): string[] => {
   const variationIndex = dataset.variations.findIndex(
     (variation) => variation.key === variationKey
   );
@@ -125,7 +125,7 @@ export const getAlternate = (state: string, variationKey: VariationKey | string)
   }
 
   const stateIndex = dataset.data.findIndex((stateVariations) =>
-    stateVariations.includes(state)
+    stateVariations.map((variation) => variation.toLowerCase()).includes(state.toLowerCase())
   );
 
   if (stateIndex === -1) {
