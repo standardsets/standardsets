@@ -1,15 +1,17 @@
 <div align="center">
   <br />
   <a href="https://standardsets.com">
-    <img src="../assets/standardsets-logo.png" width="150" />
+    <img src="./assets/standardsets-logo.png" width="150" />
   </a>
-  <h1>Standard Sets</h1>
+  <h3>Standard Sets</h3>
   <h3>Because it’s good to have, Standard Sets.</h3>
   <br />
   <p>
     <a href="https://twitter.com/standardsets" title="Follow @StandardSets on Twitter"><img src="https://img.shields.io/twitter/follow/standardsets?style=social" /></a>
   </p>
 </div>
+
+<hr />
 
 Data sets and utilities that are handy for development, and beyond.
 Because it’s good to have, Standard Sets.
