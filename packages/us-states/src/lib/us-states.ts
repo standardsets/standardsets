@@ -3,8 +3,8 @@ import type { Variation } from './types'
 export enum VariationKey {
   FULL_NAME = 'fullName',
   POSTAL_CODE = 'postalCode',
-  ABBREVIATION_AP_STYLE = 'abbrAPStyle',
-  ABBREVIATION_GPO_STYLE = 'abbrGPOStyle',
+  AP_STYLE = 'apStyle',
+  GPO_STYLE = 'gpoStyle',
 }
 
 export const dataset = {
@@ -24,13 +24,13 @@ export const dataset = {
     },
     {
       name: 'Abbreviation - AP Style',
-      key: VariationKey.ABBREVIATION_AP_STYLE,
+      key: VariationKey.AP_STYLE,
       locale: 'en-US',
       index: 2,
     },
     {
       name: 'Abbreviation - GPO Style',
-      key: VariationKey.ABBREVIATION_GPO_STYLE,
+      key: VariationKey.GPO_STYLE,
       locale: 'en-US',
       index: 3,
     },
