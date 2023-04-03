@@ -35,7 +35,7 @@ Via [Yarn](https://yarn.pm/@standardsets/us-states)
 yarn add @standardsets/us-states
 ```
 
-## Dataset Options
+## Data Set Options
 
 ### Variations
 
