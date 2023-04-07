@@ -1,4 +1,8 @@
-import type { Variation } from './types'
+import {
+  getVariations as getVariationsCore,
+  getVariationItems as getVariationItemsCore,
+  getItemVariation as getItemVariationCore,
+} from '@standardsets/core'
 
 export enum VariationKey {
   FULL_NAME = 'fullName',
@@ -9,27 +13,32 @@ export enum VariationKey {
 
 export const dataset = {
   name: 'U.S. States',
+  description: '',
   variations: [
     {
       name: 'Full Name',
+      description: '',
       key: VariationKey.FULL_NAME,
       locale: 'en-US',
       index: 0,
     },
     {
       name: 'Two-letter codes - USPS',
+      description: '',
       key: VariationKey.POSTAL_CODE,
       locale: 'en-US',
       index: 1,
     },
     {
       name: 'Abbreviation - AP Style',
+      description: '',
       key: VariationKey.AP_STYLE,
       locale: 'en-US',
       index: 2,
     },
     {
       name: 'Abbreviation - GPO Style',
+      description: '',
       key: VariationKey.GPO_STYLE,
       locale: 'en-US',
       index: 3,
@@ -89,65 +98,10 @@ export const dataset = {
   ],
 }
 
-/**
- * Returns available variations for this set.
- *
- * @returns {Variation[]} - Array of set variations
- */
-export const getVariations = (): Variation[] => {
-  return dataset.variations
-}
-
-/**
- * Returns all items for the provided variation key.
- *
- * @param variationKey
- * @returns {string[]} - Array of items for the given variation key
- */
-export const getVariationItems = (
-  variationKey: VariationKey | string = VariationKey.FULL_NAME
-): string[] => {
-  const variationIndex = dataset.variations.findIndex(
-    (variation) => variation.key === variationKey
-  )
-  return dataset.data.map((state) => state[variationIndex])
-}
-
-/**
- * Returns the item variation for the given state and variation key.
- *
- * @param state
- * @param variationKey
- * @returns {string} - The alternate for the given state and variation key
- */
+export const getVariations = getVariationsCore(dataset)
+export const getVariationItems = (variationKey = VariationKey.FULL_NAME) =>
+  getVariationItemsCore(dataset)(variationKey)
 export const getItemVariation = (
-  state: string,
-  variationKey: VariationKey | string
-): string | null => {
-  if (!state) {
-    console.warn('State is required')
-    return null
-  }
-
-  const stateIndex = dataset.data.findIndex((stateVariations) =>
-    stateVariations
-      .map((variation) => variation.toLowerCase())
-      .includes(state.toLowerCase())
-  )
-
-  if (stateIndex === -1) {
-    console.warn('State not found: ', state)
-    return null
-  }
-
-  const variationIndex = dataset.variations.findIndex(
-    (variation) => variation.key === variationKey
-  )
-
-  if (variationIndex === -1) {
-    console.warn('Variation not found: ', variationKey)
-    return null
-  }
-
-  return dataset.data[stateIndex][variationIndex]
-}
+  value: string,
+  variationKey = VariationKey.FULL_NAME
+) => getItemVariationCore(dataset, 'State')(value, variationKey)
