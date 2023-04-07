@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@standardsets/core": ["packages/core/src/index.ts"],
+      "@standardsets/countries": ["packages/countries/src/index.ts"],
+      "@standardsets/us-states": ["packages/us-states/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

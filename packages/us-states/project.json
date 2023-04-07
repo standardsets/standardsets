@@ -1,0 +1,56 @@
+{
+  "name": "us-states",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/us-states/src",
+  "projectType": "library",
+  "targets": {
+    "build-internal": {
+      "executor": "@nrwl/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/us-states",
+        "main": "packages/us-states/src/index.ts",
+        "tsConfig": "packages/us-states/tsconfig.lib.json",
+        "assets": [],
+        "format": ["cjs", "esm"],
+        "project": "packages/us-states/package.json",
+        "rollupConfig": ["tools/scripts/rollupConfig.js"],
+        "compiler": "swc",
+        "javascriptEnabled": true,
+        "generateExportsField": true,
+        "skipTypeField": false
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/us-states",
+        "command": "yarn nx run us-states:build-internal && yarn tsc -p ./packages/us-states/tsconfig.declarations.json && cp ./packages/us-states/README.md ./dist/packages/us-states/README.md"
+      }
+    },
+    "publish": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node tools/scripts/publish.mjs us-states {args.version} {args.tag} {args.otp}"
+      },
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/us-states/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/vite:test",
+      "outputs": ["{workspaceRoot}/coverage/packages/us-states"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/packages/us-states"
+      }
+    }
+  },
+  "tags": []
+}
