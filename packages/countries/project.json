@@ -4,7 +4,7 @@
   "sourceRoot": "packages/countries/src",
   "projectType": "library",
   "targets": {
-    "build": {
+    "build-internal": {
       "executor": "@nrwl/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
@@ -12,8 +12,20 @@
         "main": "packages/countries/src/index.ts",
         "tsConfig": "packages/countries/tsconfig.lib.json",
         "assets": [],
+        "format": ["cjs", "esm"],
         "project": "packages/countries/package.json",
-        "compiler": "swc"
+        "compiler": "swc",
+        "javascriptEnabled": true,
+        "generateExportsField": true,
+        "skipTypeField": false
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/countries",
+        "command": "yarn nx run countries:build-internal && yarn tsc -p ./packages/countries/tsconfig.declarations.json && cp ./packages/countries/README.md ./dist/packages/countries/README.md"
       }
     },
     "publish": {
