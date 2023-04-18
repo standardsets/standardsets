@@ -1,7 +1,7 @@
 import {
+  getItemVariation as getItemVariationCore,
   getVariations as getVariationsCore,
   getVariationItems as getVariationItemsCore,
-  getItemVariation as getItemVariationCore,
 } from '@standardsets/core'
 
 export enum VariationKey {
