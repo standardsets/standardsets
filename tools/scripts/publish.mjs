@@ -25,8 +25,6 @@ function invariant(condition, message) {
 // Default "tag" to "next" so we won't publish the "latest" tag by accident.
 const [, , name, version, tag = 'next', otp] = process.argv;
 
-console.debug(process.argv);
-
 // A simple SemVer validation to validate the version
 const validVersion = /^\d+\.\d+\.\d+(-\w+\.\d+)?/;
 invariant(
@@ -62,4 +60,4 @@ try {
 }
 
 // Execute "npm publish" to publish
-execSync(`npm publish --access public --tag ${tag} --otp ${otp}`);
+execSync(`npm publish --access public --tag ${tag}${otp ? ` --otp=${otp}` : ''}`);
