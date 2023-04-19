@@ -1,5 +1,15 @@
 {
   "name": "@standardsets/core",
   "version": "0.0.1",
-  "type": "commonjs"
+  "description": "Core methods and types for interfacing with data sets and libraries.",
+  "author": "Ryan Hefner <hi@ryanhefner.com> (https://www.ryanhefner.com)",
+  "license": "gpl-3.0",
+  "repository": {
+    "type": "git",
+    "url": "standardsets/standardsets"
+  },
+  "bugs": {
+    "url": "https://github.com/standardsets/standardsets/issues"
+  },
+  "homepage": "https://github.com/standardsets/standardsets#readme"
 }
