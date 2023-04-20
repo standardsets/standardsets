@@ -61,7 +61,7 @@ export const dataset = {
     }
   ],
   data: [
-    ['Afghanistan', ' The Islamic Republic of Afghanistan', 'AF', 'AFG', '004', '.af'],
+    ['Afghanistan', 'The Islamic Republic of Afghanistan', 'AF', 'AFG', '004', '.af'],
     ['Åland Islands', 'Åland', 'AX', 'ALA', '248', '.ax'],
     ['Albania', 'The Republic of Albania', 'AL', 'ALB', '008', '.al'],
     ['Algeria', 'The People\'s Democratic Republic of Algeria', 'DZ', 'DZA', '012', '.dz'],
