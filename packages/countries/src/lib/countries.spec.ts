@@ -1,7 +1,7 @@
 import { getVariations, getVariationItems, getItemVariation, VariationKey } from './countries'
 
 describe('countries', () => {
-  it('sholud return all variations', () => {
+  it('should return all variations', () => {
     const variations = getVariations()
     expect(variations.length).toEqual(6)
     expect(variations[0].key).toEqual('countryName')
