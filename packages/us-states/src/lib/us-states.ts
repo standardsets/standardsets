@@ -17,6 +17,7 @@ export const dataset = {
   variations: [
     {
       name: 'Full Name',
+      nameShort: 'Name',
       description: '',
       key: VariationKey.FULL_NAME,
       locale: 'en-US',
@@ -24,6 +25,7 @@ export const dataset = {
     },
     {
       name: 'Two-letter codes - USPS',
+      nameShort: 'Two-letter Code',
       description: '',
       key: VariationKey.POSTAL_CODE,
       locale: 'en-US',
@@ -31,6 +33,7 @@ export const dataset = {
     },
     {
       name: 'Abbreviation - AP Style',
+      nameShort: 'AP Style',
       description: '',
       key: VariationKey.AP_STYLE,
       locale: 'en-US',
@@ -38,6 +41,7 @@ export const dataset = {
     },
     {
       name: 'Abbreviation - GPO Style',
+      nameShort: 'GPO Style',
       description: '',
       key: VariationKey.GPO_STYLE,
       locale: 'en-US',
