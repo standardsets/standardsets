@@ -1,0 +1,55 @@
+{
+  "name": "locales",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/locales/src",
+  "projectType": "library",
+  "targets": {
+    "build-internal": {
+      "executor": "@nrwl/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/locales",
+        "main": "packages/locales/src/index.ts",
+        "tsConfig": "packages/locales/tsconfig.lib.json",
+        "assets": [],
+        "format": ["cjs", "esm"],
+        "project": "packages/locales/package.json",
+        "compiler": "swc",
+        "javascriptEnabled": true,
+        "generateExportsField": true,
+        "skipTypeField": false
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/countries",
+        "command": "yarn nx run locales:build-internal && yarn tsc -p ./packages/locales/tsconfig.declarations.json && cp ./packages/locales/README.md ./dist/packages/locales/README.md"
+      }
+    },
+    "publish": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node tools/scripts/publish.mjs locales {args.ver} {args.tag}"
+      },
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/locales/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/vite:test",
+      "outputs": ["{workspaceRoot}/coverage/packages/locales"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/packages/locales"
+      }
+    }
+  },
+  "tags": []
+}
