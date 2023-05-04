@@ -24,14 +24,14 @@
       "executor": "nx:run-commands",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/countries",
+        "outputPath": "dist/packages/locales",
         "command": "yarn nx run locales:build-internal && yarn tsc -p ./packages/locales/tsconfig.declarations.json && cp ./packages/locales/README.md ./dist/packages/locales/README.md"
       }
     },
     "publish": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "node tools/scripts/publish.mjs locales {args.ver} {args.tag}"
+        "command": "node tools/scripts/publish.mjs locales {args.version} {args.tag} {args.otp}"
       },
       "dependsOn": ["build"]
     },
