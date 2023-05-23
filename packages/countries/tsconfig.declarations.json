@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.lib.json",
+  "compilerOptions": {
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    // declarationDir should point to the root dist folder on your workspace
+    // Yours might be "../../dist" (depending on where your lib is located)
+    "declarationDir": "../../dist"
+  }
+}

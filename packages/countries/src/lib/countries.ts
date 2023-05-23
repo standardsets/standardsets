@@ -19,6 +19,7 @@ export const dataset = {
   variations: [
     {
       name: 'Country Name',
+      nameShort: 'Name',
       description: '',
       key: VariationKey.COUNTRY_NAME,
       locale: 'en-US',
@@ -26,13 +27,15 @@ export const dataset = {
     },
     {
       name: 'Official State Name',
+      nameShort: 'Official State Name',
       description: '',
       key: VariationKey.OFFICIAL_STATE_NAME,
       locale: 'en-US',
       index: 1,
     },
     {
-      name: 'Two Letter Code',
+      name: 'Two-letter Code',
+      nameShort: 'Two-letter Code',
       description: '',
       key: VariationKey.TWO_LETTER_CODE,
       locale: 'en-US',
@@ -40,6 +43,7 @@ export const dataset = {
     },
     {
       name: 'Three-letter Code',
+      nameShort: 'Three-letter Code',
       description: '',
       key: VariationKey.THREE_LETTER_CODE,
       locale: 'en-US',
@@ -47,6 +51,7 @@ export const dataset = {
     },
     {
       name: 'Numeric Code',
+      nameShort: 'Numeric Code',
       description: '',
       key: VariationKey.NUMERIC_CODE,
       locale: 'en-US',
@@ -54,6 +59,7 @@ export const dataset = {
     },
     {
       name: 'Country Code Top Level Domain (ccTLD)',
+      nameShort: 'Country Code TLD',
       description: '',
       key: VariationKey.CC_TLD,
       locale: 'en-US',
@@ -61,7 +67,7 @@ export const dataset = {
     }
   ],
   data: [
-    ['Afghanistan', ' The Islamic Republic of Afghanistan', 'AF', 'AFG', '004', '.af'],
+    ['Afghanistan', 'The Islamic Republic of Afghanistan', 'AF', 'AFG', '004', '.af'],
     ['Åland Islands', 'Åland', 'AX', 'ALA', '248', '.ax'],
     ['Albania', 'The Republic of Albania', 'AL', 'ALB', '008', '.al'],
     ['Algeria', 'The People\'s Democratic Republic of Algeria', 'DZ', 'DZA', '012', '.dz'],

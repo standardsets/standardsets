@@ -26,13 +26,13 @@ Utilities for querying U.S. States names, and their equivalent variations/abbrev
 Via [npm](https://npmjs.com/package/@standardsets/us-states)
 
 ```sh
-npm install -S @standardsets/us-states
+npm install -S @standardsets/core @standardsets/us-states
 ```
 
 Via [Yarn](https://yarn.pm/@standardsets/us-states)
 
 ```sh
-yarn add @standardsets/us-states
+yarn add @standardsets/core @standardsets/us-states
 ```
 
 ## Data Set Options

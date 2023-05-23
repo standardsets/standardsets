@@ -23,9 +23,8 @@
     },
     "build": {
       "executor": "nx:run-commands",
-      "outputs": ["{options.outputPath}"],
+      "outputs": ["{workspaceRoot}/dist/packages/us-states"],
       "options": {
-        "outputPath": "dist/packages/us-states",
         "command": "yarn nx run us-states:build-internal && yarn tsc -p ./packages/us-states/tsconfig.declarations.json && cp ./packages/us-states/README.md ./dist/packages/us-states/README.md"
       }
     },

@@ -4,7 +4,7 @@
   "sourceRoot": "packages/countries/src",
   "projectType": "library",
   "targets": {
-    "build": {
+    "build-internal": {
       "executor": "@nrwl/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
@@ -12,15 +12,23 @@
         "main": "packages/countries/src/index.ts",
         "tsConfig": "packages/countries/tsconfig.lib.json",
         "assets": [],
+        "format": ["cjs", "esm"],
         "project": "packages/countries/package.json",
-        "compiler": "swc"
+        "compiler": "swc",
+        "javascriptEnabled": true,
+        "generateExportsField": true,
+        "skipTypeField": false
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/packages/countries"],
+      "options": {
+        "command": "yarn nx run countries:build-internal && yarn tsc -p ./packages/countries/tsconfig.declarations.json && cp ./packages/countries/README.md ./dist/packages/countries/README.md"
       }
     },
     "publish": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "node tools/scripts/publish.mjs countries {args.ver} {args.tag}"
-      },
+      "command": "node tools/scripts/publish.mjs countries {args.version} {args.tag} {args.otp}",
       "dependsOn": ["build"]
     },
     "lint": {
@@ -32,7 +40,7 @@
     },
     "test": {
       "executor": "@nrwl/vite:test",
-      "outputs": ["coverage/packages/countries"],
+      "outputs": ["{workspaceRoot}/coverage/packages/countries"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/countries"

@@ -17,6 +17,8 @@
     "paths": {
       "@standardsets/core": ["packages/core/src/index.ts"],
       "@standardsets/countries": ["packages/countries/src/index.ts"],
+      "@standardsets/currencies": ["packages/currencies/src/index.ts"],
+      "@standardsets/locales": ["packages/locales/src/index.ts"],
       "@standardsets/us-states": ["packages/us-states/src/index.ts"]
     }
   },

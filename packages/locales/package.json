@@ -1,7 +1,7 @@
 {
-  "name": "@standardsets/countries",
+  "name": "@standardsets/locales",
   "version": "0.0.1",
-  "description": "Utilities for querying U.S. States data, and their equivalent variations/abbreviations.",
+  "description": "Utilities for querying Locales data, and their equivalent variations/abbreviations.",
   "author": "Ryan Hefner <hi@ryanhefner.com> (https://www.ryanhefner.com)",
   "license": "gpl-3.0",
   "repository": {

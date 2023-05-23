@@ -1,20 +1,19 @@
 {
-  "name": "core",
+  "name": "locales",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/core/src",
+  "sourceRoot": "packages/locales/src",
   "projectType": "library",
   "targets": {
     "build-internal": {
       "executor": "@nrwl/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/core",
-        "main": "packages/core/src/index.ts",
-        "tsConfig": "packages/core/tsconfig.lib.json",
+        "outputPath": "dist/packages/locales",
+        "main": "packages/locales/src/index.ts",
+        "tsConfig": "packages/locales/tsconfig.lib.json",
         "assets": [],
         "format": ["cjs", "esm"],
-        "project": "packages/core/package.json",
-        "rollupConfig": ["tools/scripts/rollupConfig.js"],
+        "project": "packages/locales/package.json",
         "compiler": "swc",
         "javascriptEnabled": true,
         "generateExportsField": true,
@@ -23,15 +22,15 @@
     },
     "build": {
       "executor": "nx:run-commands",
-      "outputs": ["{workspaceRoot}/dist/packages/core"],
+      "outputs": ["{workspaceRoot}/dist/packages/locales"],
       "options": {
-        "command": "yarn nx run core:build-internal && yarn tsc -p ./packages/core/tsconfig.declarations.json && cp ./packages/core/README.md ./dist/packages/core/README.md"
+        "command": "yarn nx run locales:build-internal && yarn tsc -p ./packages/locales/tsconfig.declarations.json && cp ./packages/locales/README.md ./dist/packages/locales/README.md"
       }
     },
     "publish": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "node tools/scripts/publish.mjs core {args.version} {args.tag} {args.otp}"
+        "command": "node tools/scripts/publish.mjs locales {args.version} {args.tag} {args.otp}"
       },
       "dependsOn": ["build"]
     },
@@ -39,15 +38,15 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/core/**/*.ts"]
+        "lintFilePatterns": ["packages/locales/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/vite:test",
-      "outputs": ["{workspaceRoot}/coverage/packages/core"],
+      "outputs": ["{workspaceRoot}/coverage/packages/locales"],
       "options": {
         "passWithNoTests": true,
-        "reportsDirectory": "../../coverage/packages/core"
+        "reportsDirectory": "../../coverage/packages/locales"
       }
     }
   },
