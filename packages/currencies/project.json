@@ -1,0 +1,51 @@
+{
+  "name": "currencies",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/currencies/src",
+  "projectType": "library",
+  "targets": {
+    "build-internal": {
+      "executor": "@nx/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/currencies",
+        "main": "packages/currencies/src/index.ts",
+        "tsConfig": "packages/currencies/tsconfig.lib.json",
+        "assets": [],
+        "format": ["cjs", "esm"],
+        "project": "packages/currencies/package.json",
+        "compiler": "swc",
+        "javascriptEnabled": true,
+        "generateExportsField": true,
+        "skipTypeField": false
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/packages/currencies"],
+      "options": {
+        "command": "yarn nx run currencies:build-internal && yarn tsc -p ./packages/currencies/tsconfig.declarations.json && cp ./packages/currencies/README.md ./dist/packages/currencies/README.md"
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs currencies {args.version} {args.tag} {args.opt}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/currencies/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{workspaceRoot}/coverage/packages/currencies"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/packages/currencies"
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "@standardsets/currencies",
+  "version": "0.0.1",
+  "description": "Utilities for querying Currencies data, and their equivalent variations/abbreviations.",
+  "author": "Ryan Hefner <hi@ryanhefner.com> (https://www.ryanhefner.com)",
+  "license": "gpl-3.0",
+  "repository": {
+    "type": "git",
+    "url": "standardsets/standardsets"
+  },
+  "bugs": {
+    "url": "https://github.com/standardsets/standardsets/issues"
+  },
+  "homepage": "https://github.com/standardsets/standardsets#readme",
+  "peerDependencies": {
+    "@standardsets/core": "^0.0.1"
+  },
+  "devDependencies": {
+    "@standardsets/core": "^0.0.1"
+  }
+}
