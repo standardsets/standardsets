@@ -22,9 +22,8 @@
     },
     "build": {
       "executor": "nx:run-commands",
-      "outputs": ["{options.outputPath}"],
+      "outputs": ["{workspaceRoot}/dist/packages/locales"],
       "options": {
-        "outputPath": "dist/packages/locales",
         "command": "yarn nx run locales:build-internal && yarn tsc -p ./packages/locales/tsconfig.declarations.json && cp ./packages/locales/README.md ./dist/packages/locales/README.md"
       }
     },

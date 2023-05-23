@@ -23,9 +23,8 @@
     },
     "build": {
       "executor": "nx:run-commands",
-      "outputs": ["{options.outputPath}"],
+      "outputs": ["{workspaceRoot}/dist/packages/core"],
       "options": {
-        "outputPath": "dist/packages/core",
         "command": "yarn nx run core:build-internal && yarn tsc -p ./packages/core/tsconfig.declarations.json && cp ./packages/core/README.md ./dist/packages/core/README.md"
       }
     },

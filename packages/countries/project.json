@@ -22,17 +22,13 @@
     },
     "build": {
       "executor": "nx:run-commands",
-      "outputs": ["{options.outputPath}"],
+      "outputs": ["{workspaceRoot}/dist/packages/countries"],
       "options": {
-        "outputPath": "dist/packages/countries",
         "command": "yarn nx run countries:build-internal && yarn tsc -p ./packages/countries/tsconfig.declarations.json && cp ./packages/countries/README.md ./dist/packages/countries/README.md"
       }
     },
     "publish": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "node tools/scripts/publish.mjs countries {args.version} {args.tag} {args.otp}"
-      },
+      "command": "node tools/scripts/publish.mjs countries {args.version} {args.tag} {args.otp}",
       "dependsOn": ["build"]
     },
     "lint": {
